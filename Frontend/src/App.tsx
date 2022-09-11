@@ -12,6 +12,7 @@ import { Main } from "./components/main/main";
 
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";
+import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
 
 function App() {
   const isLoggedIn = useSelector(
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <BackgroundVideo/>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
