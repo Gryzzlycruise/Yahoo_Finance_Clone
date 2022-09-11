@@ -1,0 +1,116 @@
+@import "./src/styles/variables";
+
+.wrapper {
+  background-color: $color-bg;
+  font-size: $ruler;
+  letter-spacing: -0.2px;
+  border-radius: $ruler;
+}
+div, p {
+  color: $color-shadow;
+  text-shadow: 1px 1px 1px $color-white;
+}
+form {
+  padding: $ruler;
+  width: $ruler * 20;
+  margin: 0 auto;
+}
+.title {
+  padding: $ruler * 2 0;
+  text-align: center;
+  color: $color-grey;
+}
+button, input {
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+}
+label {
+  display: flex;
+  align-items: flex-end;
+  height: $ruler * 1.5;
+  width: 100%;
+}
+input {
+  margin-right: $ruler / 2;
+  box-shadow: inset 2px 2px 5px $color-shadow,
+              inset -5px -5px 10px $color-white;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+                inset -1px -1px 2px $color-white;
+  }
+
+  &.red {
+    border: 3px solid $color-red;
+  }
+}
+button {
+  margin-top: $ruler * 1.5;
+  color: $color-grey;
+  box-shadow: -5px -5px 20px $color-white,
+              5px 5px 20px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 700;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white,
+                2px 2px 5px $color-shadow;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+                inset -1px -1px 2px $color-white;
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+    background-color: #c0c0c0;
+  }
+
+  .icon {
+    margin-right: $ruler / 2;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
+  &.red {
+    display: block;
+    width: 100%;
+    color: $color-red;
+
+    svg {
+      fill: $color-red;;
+    }
+  }
+
+  &.green {
+    display: block;
+    width: 100%;
+    color: $color-green;
+
+    svg {
+      fill: $color-green;;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  form {
+    width: $ruler * 16;
+  }
+  label {
+    height: $ruler * 3;
+  }
+}
