@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      {/*<Header />*/}
       <BackgroundVideo/>
       <Routes>
         <Route path="/" element={<Main />} />

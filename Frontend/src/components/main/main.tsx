@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { IRootState, useAppDispatch } from "../../store";
 import { getProfile, logoutUser } from "../../store/auth/actionCreators";
 import { Login } from "../login/login";
+import Logo from "../../assets/images/MainLogo.svg";
+import styles from "./main.module.scss";
 
 export const Main = () => {
   const dispatch = useAppDispatch();
@@ -23,8 +25,8 @@ export const Main = () => {
   );
 
   return (
-    <div>
-      <h1>Main</h1>
+    <div className={styles.wrapper}>
+      <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
       {isLoggedIn ? renderProfile() : <Login />}
     </div>
   );
