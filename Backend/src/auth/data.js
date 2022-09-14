@@ -1,9 +1,9 @@
 const passwordSecret = "abc";
 
 const fakeUser = {
-  login: "admin",
+  login: "user",
   passwordHash:
-    "387fc3464b7558755bc2c192d20b37c781666086d13496adcff2720a139a3daf",
+    "7e445e802386cca0edef207f2aeace7b39bd12a0b7f8da559da4c596ae9799b1",
 };
 
 module.exports = {

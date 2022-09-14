@@ -30,7 +30,7 @@ function App() {
       {/*<Header />*/}
       <BackgroundVideo/>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main />}/>
         <Route
           path="/dashboard"
           element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
