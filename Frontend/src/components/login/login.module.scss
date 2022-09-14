@@ -21,7 +21,7 @@ form {
 .title {
   padding: $ruler * 2 0;
   text-align: center;
-  color: $color-grey;
+  color: $color-gray;
 }
 button, input {
   border: 0;
@@ -59,7 +59,7 @@ input {
 }
 button {
   margin-top: $ruler * 1.5;
-  color: $color-grey;
+  color: $color-gray;
   box-shadow: -5px -5px 20px $color-white,
               5px 5px 20px $color-shadow;
   transition: all 0.2s ease-in-out;
