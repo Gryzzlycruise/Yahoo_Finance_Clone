@@ -92,6 +92,7 @@ export const Login = () => {
         <button
             className={!!(loginError || passwordError) ? styles.red : styles.green}
             disabled={!!(loginError || passwordError)}
+            title={loginError || passwordError}
         >
           {!!(loginError || passwordError) ? <GlobalSvgSelector id={'closed_lock'}/>: <GlobalSvgSelector id={'opened_lock'}/>}
           Log in
