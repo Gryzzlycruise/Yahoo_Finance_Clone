@@ -2,8 +2,8 @@ import { FormEvent, useState } from "react";
 import { useAppDispatch } from "../../store";
 import { loginUser } from "../../store/auth/actionCreators";
 import styles from "./login.module.scss";
-import {GlobalSvgSelector} from "../../assets/icons/global/GlobalSvgSelector";
 import {ErrorMessage} from "../errorMessage/errorMessage";
+import {ButtonLoginForm} from "../shared/buttonLoginForm/buttonLoginForm";
 
 export const Login = () => {
   const dispatch = useAppDispatch();
@@ -89,14 +89,12 @@ export const Login = () => {
             onBlur={handleBlur}
           />
         </div>
-        <button
-            className={!!(loginError || passwordError) ? styles.red : styles.green}
-            disabled={!!(loginError || passwordError)}
-            title={loginError || passwordError}
-        >
-          {!!(loginError || passwordError) ? <GlobalSvgSelector id={'closed_lock'}/>: <GlobalSvgSelector id={'opened_lock'}/>}
-          Log in
-        </button>
+        <ButtonLoginForm className={!!(loginError || passwordError) ? 'red' : 'green'}
+                         disabled={!!(loginError || passwordError)}
+                         title={loginError || passwordError}
+                         text={'Log in'}
+                         icon={!!(loginError || passwordError) ? 'closed_lock' : 'opened_lock'}
+        />
       </form>
     </div>
   );

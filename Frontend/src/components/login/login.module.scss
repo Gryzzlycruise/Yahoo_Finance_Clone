@@ -23,7 +23,7 @@ form {
   text-align: center;
   color: $color-gray;
 }
-button, input {
+input {
   border: 0;
   outline: 0;
   font-size: $ruler;
@@ -55,58 +55,6 @@ input {
 
   &.red {
     border: 3px solid $color-red;
-  }
-}
-button {
-  margin-top: $ruler * 1.5;
-  color: $color-gray;
-  box-shadow: -5px -5px 20px $color-white,
-              5px 5px 20px $color-shadow;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  font-weight: 700;
-
-  &:hover {
-    box-shadow: -2px -2px 5px $color-white,
-                2px 2px 5px $color-shadow;
-  }
-
-  &:active {
-    box-shadow: inset 1px 1px 2px $color-shadow,
-                inset -1px -1px 2px $color-white;
-  }
-
-  &:disabled{
-    cursor: not-allowed;
-    background-color: #c0c0c0;
-  }
-
-  .icon {
-    margin-right: $ruler / 2;
-  }
-
-  svg {
-    margin-right: 5px;
-  }
-
-  &.red {
-    display: block;
-    width: 100%;
-    color: $color-red;
-
-    svg {
-      fill: $color-red;;
-    }
-  }
-
-  &.green {
-    display: block;
-    width: 100%;
-    color: $color-green;
-
-    svg {
-      fill: $color-green;;
-    }
   }
 }
 
