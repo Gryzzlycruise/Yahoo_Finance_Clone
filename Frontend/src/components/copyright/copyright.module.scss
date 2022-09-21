@@ -1,0 +1,10 @@
+@import "./src/styles/variables";
+
+.title {
+  font-size: $ruler;
+  color: $color-shadow;
+  text-shadow: none;
+}
+.title::after {
+  content: '\A9';
+}
