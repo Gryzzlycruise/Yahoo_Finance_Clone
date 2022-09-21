@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { IRootState, useAppDispatch } from "../../store";
 import { getProfile, logoutUser } from "../../store/auth/actionCreators";
 import { Login } from "../login/login";
+import { Copyright } from "../copyright/copyright";
 import Logo from "../../assets/images/MainLogo.svg";
 import styles from "./main.module.scss";
 
@@ -28,6 +29,7 @@ export const Main = () => {
     <div className={styles.wrapper}>
       <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
       {isLoggedIn ? renderProfile() : <Login />}
+      <Copyright/>
     </div>
   );
 };
