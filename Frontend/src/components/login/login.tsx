@@ -1,15 +1,16 @@
 import { FormEvent, useState } from "react";
-import { useAppDispatch } from "../../store";
+import {store, useAppDispatch} from "../../store";
 import { loginUser } from "../../store/auth/actionCreators";
 import styles from "./login.module.scss";
 import {ErrorMessage} from "../errorMessage/errorMessage";
 import {ButtonLoginForm} from "../shared/buttonLoginForm/buttonLoginForm";
+import type {MainProps as LoginProps } from "../main/main";
 
-export const Login = () => {
+export const Login = ({login, setLogin, password, setPassword, setActive}: LoginProps) => {
   const dispatch = useAppDispatch();
 
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  // const [login, setLogin] = useState("");
+  // const [password, setPassword] = useState("");
 
   const [loginError, setLoginError] = useState("You don't entered login");
   const [passwordError, setPasswordError] = useState("You don't entered password");
@@ -55,6 +56,18 @@ export const Login = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(loginUser({ login, password }));
+
+    setTimeout(() => {
+      const state = store.getState();
+      const requestError = state.auth.authData.error;
+      console.warn(requestError);
+
+      if (requestError !== null) {
+          setActive(true);
+          setLogin('user');
+          setPassword('user');
+      }
+    },600);
   };
 
   return (

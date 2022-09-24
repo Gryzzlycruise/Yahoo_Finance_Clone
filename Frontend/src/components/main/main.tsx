@@ -7,7 +7,15 @@ import { Copyright } from "../copyright/copyright";
 import Logo from "../../assets/images/MainLogo.svg";
 import styles from "./main.module.scss";
 
-export const Main = () => {
+export type MainProps = {
+    setActive: Function;
+    login: string;
+    setLogin: Function;
+    password: string;
+    setPassword: Function;
+}
+
+export const Main = (props: MainProps) => {
   const dispatch = useAppDispatch();
 
   const profile = useSelector(
@@ -28,7 +36,12 @@ export const Main = () => {
   return (
     <div className={styles.wrapper}>
       <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
-      {isLoggedIn ? renderProfile() : <Login />}
+      {isLoggedIn ? renderProfile() : <Login setActive={props.setActive}
+                                             login={props.login}
+                                             setLogin={props.setLogin}
+                                             password={props.password}
+                                             setPassword={props.setPassword}
+                                             />}
       <Copyright/>
     </div>
   );
