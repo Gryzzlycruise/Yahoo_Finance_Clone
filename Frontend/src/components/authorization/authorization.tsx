@@ -5,9 +5,9 @@ import { getProfile, logoutUser } from "../../store/auth/actionCreators";
 import { Login } from "../login/login";
 import { Copyright } from "../copyright/copyright";
 import Logo from "../../assets/images/MainLogo.svg";
-import styles from "./main.module.scss";
+import styles from "./authorization.module.scss";
 
-export type MainProps = {
+export type AuthorizationProps = {
     setActive: Function;
     login: string;
     setLogin: Function;
@@ -15,7 +15,7 @@ export type MainProps = {
     setPassword: Function;
 }
 
-export const Main = (props: MainProps) => {
+export const Authorization = (props: AuthorizationProps) => {
   const dispatch = useAppDispatch();
 
   const profile = useSelector(

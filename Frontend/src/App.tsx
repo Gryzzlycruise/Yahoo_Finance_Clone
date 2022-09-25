@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Dashboard } from "./components/dashboard/dashboard";
 import { Header } from "./components/header/header";
-import { Main } from "./components/main/main";
+import { Authorization } from "./components/authorization/authorization";
 
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";
@@ -37,7 +37,7 @@ function App() {
       {/*<Header />*/}
       <BackgroundVideo/>
       <Routes>
-        <Route path="/" element={<Main setActive={setModalActive}
+        <Route path="/" element={<Authorization setActive={setModalActive}
                                        login={login}
                                        setLogin={setLogin}
                                        password={password}

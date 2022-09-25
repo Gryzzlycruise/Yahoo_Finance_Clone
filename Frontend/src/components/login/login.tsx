@@ -4,7 +4,7 @@ import { loginUser } from "../../store/auth/actionCreators";
 import styles from "./login.module.scss";
 import {ErrorMessage} from "../errorMessage/errorMessage";
 import {ButtonLoginForm} from "../shared/buttonLoginForm/buttonLoginForm";
-import type {MainProps as LoginProps } from "../main/main";
+import type {AuthorizationProps as LoginProps } from "../authorization/authorization";
 
 export const Login = ({login, setLogin, password, setPassword, setActive}: LoginProps) => {
   const dispatch = useAppDispatch();
