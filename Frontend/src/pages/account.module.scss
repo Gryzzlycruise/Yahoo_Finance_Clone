@@ -1,0 +1,61 @@
+@import "./src/styles/variables";
+
+.wrapper {
+  padding: 15px;
+  width: 26vw;
+  margin: 0 auto;
+  height: 85vh;
+}
+
+.logo {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  border: 2px solid $color-deep_lilac;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.7s ease-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logo img {
+  position: absolute;
+  z-index: 1;
+  width: 25vw;
+  height: 25vw;
+}
+
+.wrapper h1 {
+  margin: 10px 0 0;
+  color: $color-deep_lilac;
+}
+
+.link {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #d5d8da;
+  width: 25vw;
+  height: 2rem;
+  color:  $color-gray_8;
+  background-color: #f6f8fa;
+  text-decoration: none;
+  margin-right: 1vw;
+  font-size: 1rem;
+  transition: all 0.7s ease-out;
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  text-shadow: 1px 1px 0 #ffffff;
+  box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px #babecc;
+  cursor: pointer;
+  font-weight: 700;
+  &:hover {
+    color: $color-deep_lilac;
+    border: 2px solid $color-deep_lilac;
+    transform: translate(0%, -20%);
+  }
+}

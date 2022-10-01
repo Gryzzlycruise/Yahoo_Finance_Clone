@@ -37,8 +37,8 @@
     background-color: #FFFFFF;
     box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
     border-radius: 50%;
-  &:hover svg {
-    fill: $color-deep_lilac;
+  &:hover {
+    background-color: rgba(126, 31, 255, 0.7);
   }
 }
 

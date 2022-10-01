@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { IRootState, useAppDispatch } from "../../store";
-import { getProfile, logoutUser } from "../../store/auth/actionCreators";
+import { IRootState } from "../../store";
 import { Login } from "../login/login";
 import { Copyright } from "../copyright/copyright";
 import Logo from "../../assets/images/MainLogo.svg";
@@ -16,26 +15,13 @@ export type AuthorizationProps = {
 }
 
 export const Authorization = (props: AuthorizationProps) => {
-  const dispatch = useAppDispatch();
-
-  const profile = useSelector(
-    (state: IRootState) => state.auth.profileData.profile
-  );
   const isLoggedIn = useSelector(
     (state: IRootState) => !!state.auth.authData.accessToken
   );
 
-  // const renderProfile = () => (
-  //   <div>
-  //     <div>Вы успeшно авторизовались, {profile}</div>
-  //     <button onClick={() => dispatch(logoutUser())}>Logout</button>
-  //     <button onClick={() => dispatch(getProfile())}>update profile</button>
-  //   </div>
-  // );
-
   return (
       <>
-          {isLoggedIn ? <button onClick={() => dispatch(logoutUser())}>Logout</button> :
+          {isLoggedIn ? null :
               <div className={styles.wrapper}>
                   <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
                   {isLoggedIn ? null : <Login setActive={props.setActive}
@@ -46,7 +32,6 @@ export const Authorization = (props: AuthorizationProps) => {
                   />}
                   <Copyright/>
               </div>
-
           }
       </>
   );

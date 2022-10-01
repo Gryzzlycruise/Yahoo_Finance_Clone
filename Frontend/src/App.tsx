@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 
 import { Dashboard } from "./components/dashboard/dashboard";
@@ -55,7 +54,7 @@ function App() {
             <Route path="/news" element={<NewsPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/markets" element={<MarketsPage />} />
-            <Route path="/account" element={<AccountPage />} />
+            <Route path="/account" element={<AccountPage setLogin={setLogin} setPassword={setPassword}/>} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
       {isLoggedIn ? <NavBar/> : null}

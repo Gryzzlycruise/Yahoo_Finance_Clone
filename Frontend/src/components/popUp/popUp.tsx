@@ -1,7 +1,7 @@
 import styles from "./popUp.module.scss"
 import {ButtonLoginForm} from "../shared/buttonLoginForm/buttonLoginForm";
 
-type PopUpProps = {
+export interface PopUpProps {
     active: boolean;
     setActive: Function;
     setLogin: Function;
