@@ -6,14 +6,21 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 import { Dashboard } from "./components/dashboard/dashboard";
-import { Header } from "./components/header/header";
 import { Authorization } from "./components/authorization/authorization";
+import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
+import {PopUp} from "./components/popUp/popUp";
+
+import {AccountPage} from "./pages/account";
+import {ErrorPage} from "./pages/error";
+import {HomePage} from "./pages/home";
+import {MarketsPage} from "./pages/markets";
+import {NewsPage} from "./pages/news";
+import {SearchPage} from "./pages/search";
 
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";
-import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
-import {PopUp} from "./components/popUp/popUp";
 
 import styles from "./components/popUp/popUp.module.scss";
 
@@ -34,20 +41,22 @@ function App() {
 
   return (
     <Router>
-      {/*<Header />*/}
-        {isLoggedIn ? null : <BackgroundVideo/>}
-      <Routes>
-        <Route path="/" element={<Authorization setActive={setModalActive}
+      {isLoggedIn ? null : <BackgroundVideo/>}
+        <Routes>
+            <Route path="/" element={<Authorization setActive={setModalActive}
                                        login={login}
                                        setLogin={setLogin}
                                        password={password}
                                        setPassword={setPassword}
-                                />}/>
-        <Route
-          path="/dashboard"
-          element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
-        />
-      </Routes>
+                                     />}/>
+            <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}/>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/markets" element={<MarketsPage />} />
+            <Route path="/account" element={<AccountPage />} />
+            <Route path="*" element={<ErrorPage />} />
+        </Routes>
       <PopUp active={modalActive}
              setActive={setModalActive}
              setLogin={setLogin}
