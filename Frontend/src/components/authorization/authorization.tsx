@@ -25,24 +25,29 @@ export const Authorization = (props: AuthorizationProps) => {
     (state: IRootState) => !!state.auth.authData.accessToken
   );
 
-  const renderProfile = () => (
-    <div>
-      <div>Вы успeшно авторизовались, {profile}</div>
-      <button onClick={() => dispatch(logoutUser())}>Logout</button>
-      <button onClick={() => dispatch(getProfile())}>update profile</button>
-    </div>
-  );
+  // const renderProfile = () => (
+  //   <div>
+  //     <div>Вы успeшно авторизовались, {profile}</div>
+  //     <button onClick={() => dispatch(logoutUser())}>Logout</button>
+  //     <button onClick={() => dispatch(getProfile())}>update profile</button>
+  //   </div>
+  // );
 
   return (
-    <div className={styles.wrapper}>
-      <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
-      {isLoggedIn ? renderProfile() : <Login setActive={props.setActive}
-                                             login={props.login}
-                                             setLogin={props.setLogin}
-                                             password={props.password}
-                                             setPassword={props.setPassword}
-                                             />}
-      <Copyright/>
-    </div>
+      <>
+          {isLoggedIn ? <button onClick={() => dispatch(logoutUser())}>Logout</button> :
+              <div className={styles.wrapper}>
+                  <img src={Logo} alt={'Main logo'} className={styles.logo}></img>
+                  {isLoggedIn ? null : <Login setActive={props.setActive}
+                                              login={props.login}
+                                              setLogin={props.setLogin}
+                                              password={props.password}
+                                              setPassword={props.setPassword}
+                  />}
+                  <Copyright/>
+              </div>
+
+          }
+      </>
   );
 };

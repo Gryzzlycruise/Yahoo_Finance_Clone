@@ -11,6 +11,7 @@ import { Dashboard } from "./components/dashboard/dashboard";
 import { Authorization } from "./components/authorization/authorization";
 import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
 import {PopUp} from "./components/popUp/popUp";
+import {NavBar} from "./components/navBar/navBar";
 
 import {AccountPage} from "./pages/account";
 import {ErrorPage} from "./pages/error";
@@ -49,7 +50,7 @@ function App() {
                                        password={password}
                                        setPassword={setPassword}
                                      />}/>
-            <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}/>
+            {/*<Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}/>*/}
             <Route path="/home" element={<HomePage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/search" element={<SearchPage />} />
@@ -57,6 +58,7 @@ function App() {
             <Route path="/account" element={<AccountPage />} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
+      {isLoggedIn ? <NavBar/> : null}
       <PopUp active={modalActive}
              setActive={setModalActive}
              setLogin={setLogin}
