@@ -35,7 +35,7 @@ function App() {
   return (
     <Router>
       {/*<Header />*/}
-      <BackgroundVideo/>
+        {isLoggedIn ? null : <BackgroundVideo/>}
       <Routes>
         <Route path="/" element={<Authorization setActive={setModalActive}
                                        login={login}

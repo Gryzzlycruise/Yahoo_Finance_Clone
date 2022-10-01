@@ -9,9 +9,6 @@ import type {AuthorizationProps as LoginProps } from "../authorization/authoriza
 export const Login = ({login, setLogin, password, setPassword, setActive}: LoginProps) => {
   const dispatch = useAppDispatch();
 
-  // const [login, setLogin] = useState("");
-  // const [password, setPassword] = useState("");
-
   const [loginError, setLoginError] = useState("You don't entered login");
   const [passwordError, setPasswordError] = useState("You don't entered password");
 
