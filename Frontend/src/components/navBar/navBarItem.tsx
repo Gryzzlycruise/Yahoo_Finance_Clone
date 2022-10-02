@@ -8,13 +8,17 @@ interface Props {
     item: INavBarItem
 }
 
-export const NavBarItem = ({item}: Props) => {
-    const {icon_id, name} =item
+const setActive = ({isActive}: any) => isActive ? `${styles.item} ${styles.active}` : `${styles.item}`;
 
-    return <NavLink  to={icon_id} className={styles.item}>
-        <div className={styles.icon}>
-            <GlobalSvgSelector id={icon_id}/>
-        </div>
-        <div className={styles.item_name}>{name}</div>
-    </NavLink>
+export const NavBarItem = ({item}: Props) => {
+    const {icon_id, name} =item;
+
+    return (
+            <NavLink  to={icon_id} className={setActive}>
+                <div className={styles.icon}>
+                    <GlobalSvgSelector id={icon_id}/>
+                </div>
+                <div className={styles.item_name}>{name}</div>
+            </NavLink>
+    )
 }

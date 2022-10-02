@@ -55,3 +55,15 @@
 .item:hover > .item_name {
   color: $color-deep_lilac;
 }
+
+.active {
+  transform: scale(1.2);
+}
+
+.active > .icon {
+  background-color: $color-fuchsia;
+}
+
+.active > .item_name {
+  color: $color-fuchsia;
+}
