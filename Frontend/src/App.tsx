@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
+    BrowserRouter as Router,
+    Routes,
+    Route, Navigate,
 } from "react-router-dom";
 
 import { Dashboard } from "./components/dashboard/dashboard";
@@ -43,18 +43,17 @@ function App() {
     <Router>
       {isLoggedIn ? null : <BackgroundVideo/>}
         <Routes>
-            <Route path="/" element={<Authorization setActive={setModalActive}
+            <Route path="/" element={ !isLoggedIn ? <Authorization setActive={setModalActive}
                                        login={login}
                                        setLogin={setLogin}
                                        password={password}
                                        setPassword={setPassword}
-                                     />}/>
-            {/*<Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}/>*/}
+                                     /> : <Navigate to="/account" />}/>
             <Route path="/home" element={<HomePage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/markets" element={<MarketsPage />} />
-            <Route path="/account" element={<AccountPage setLogin={setLogin} setPassword={setPassword}/>} />
+            <Route path="/account" element={ isLoggedIn ? <AccountPage setLogin={setLogin} setPassword={setPassword}/>: <Navigate to="/" />} />
             <Route path="*" element={<ErrorPage />} />
         </Routes>
       {isLoggedIn ? <NavBar/> : null}

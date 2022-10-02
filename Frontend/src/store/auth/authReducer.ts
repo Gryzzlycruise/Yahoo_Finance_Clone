@@ -37,7 +37,7 @@ export const authReducer = createSlice({
         isLoading: true,
       },
     }),
-    loginSucess: (state, action: PayloadAction<string>): AuthState => ({
+    loginSuccess: (state, action: PayloadAction<string>): AuthState => ({
       ...state,
       authData: {
         ...state.authData,
@@ -61,7 +61,7 @@ export const authReducer = createSlice({
         isLoading: true,
       },
     }),
-    loadProfileSucess: (state, action: PayloadAction<string>): AuthState => ({
+    loadProfileSuccess: (state, action: PayloadAction<string>): AuthState => ({
       ...state,
       profileData: {
         ...state.profileData,
@@ -84,10 +84,10 @@ export const authReducer = createSlice({
 
 export const {
   loadProfileStart,
-  loadProfileSucess,
+  loadProfileSuccess,
   loadProfileFailure,
   loginStart,
-  loginSucess,
+  loginSuccess,
   loginFailure,
   logoutSuccess,
 } = authReducer.actions;

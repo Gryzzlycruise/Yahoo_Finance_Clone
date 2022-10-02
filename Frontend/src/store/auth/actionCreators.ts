@@ -3,12 +3,12 @@ import api from "../../api";
 import { ILoginRequest, ILoginResponse } from "../../api/auth/types";
 import {
   loginStart,
-  loginSucess,
+  loginSuccess,
   loginFailure,
   logoutSuccess,
   loadProfileStart,
   loadProfileFailure,
-  loadProfileSucess,
+  loadProfileSuccess,
 } from "./authReducer";
 import { history } from "../../utils/history";
 import { store } from "..";
@@ -23,7 +23,7 @@ export const loginUser =
 
       const res = await api.auth.login(data);
 
-      dispatch(loginSucess(res.data.accessToken));
+      dispatch(loginSuccess(res.data.accessToken));
       dispatch(getProfile());
     } catch (e: any) {
       console.error(e);
@@ -54,7 +54,7 @@ export const getProfile =
 
       const res = await api.auth.getProfile();
 
-      dispatch(loadProfileSucess(res.data));
+      dispatch(loadProfileSuccess(res.data));
     } catch (e: any) {
       console.error(e);
 
@@ -79,7 +79,7 @@ export const getAccessToken =
         const res = await refreshTokenRequest;
         refreshTokenRequest = null;
 
-        dispatch(loginSucess(res.data.accessToken));
+        dispatch(loginSuccess(res.data.accessToken));
 
         return res.data.accessToken;
       }
