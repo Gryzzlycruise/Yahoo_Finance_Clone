@@ -9,7 +9,7 @@
   padding: 15px;
   max-width: 600px;
   width: 100%;
-  background: $color-bg;
+  background: var(#{--navbar-background-default});
   border-radius: $ruler;
   box-shadow: $color-shadow;
   display: flex;
@@ -34,8 +34,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
-    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    background-color: var(#{--component-background-default});
+    box-shadow: 1px 4px 10px -1px var(#{--component-shadow-default});
     border-radius: 50%;
   &:hover {
     background-color: rgba(126, 31, 255, 0.7);
@@ -48,7 +48,8 @@
   font-size: 11px;
   line-height: 13px;
   text-align: center;
-  color: $color-gray_8;
+  text-shadow: none;
+  color: var(#{--text-color-default});
   }
 }
 

@@ -6,7 +6,6 @@ import {
     Route, Navigate,
 } from "react-router-dom";
 
-import { Dashboard } from "./components/dashboard/dashboard";
 import { Authorization } from "./components/authorization/authorization";
 import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
 import {PopUp} from "./components/popUp/popUp";

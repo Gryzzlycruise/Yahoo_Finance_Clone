@@ -4,6 +4,7 @@ $color-black: #000000;
 $color-gray_11: #111417;
 $color-gray_10: #1E2127;
 $color-gray_9: #232A31;
+$color-gray-shadow: rgba(71, 147, 255, 0.2);
 $color-gray_8: #474D55;
 $color-gray_7: #5C6269;
 $color-gray_6: #838992;
@@ -14,8 +15,10 @@ $color-gray_2: #F0F3F5;
 $color-gray_1: #F5F8FA;
 $color-gray_0: #F6F6F6;
 $color-gray: #61677C;
+$color-gray-svg: #5B636A;
 $color-shadow: #BABECC;
 $color-bg: #EBECF0;
+$color-white2: #FEFFFE;
 $color-white: #FFFFFF;
 $color-fuchsia: #DC346F;
 $color-deep_lilac: #7E1FFF;
@@ -27,3 +30,30 @@ $color-green: #00873C;
 $color-yellow: #F2AB3C;
 $color-orange: #F09139;
 $color-red: #D83337;
+
+:root{
+  //body-background
+  --body-background-dark: #{$color-black};
+  --body-background-light: #{$color-white2};
+  --body-background-default: var(#{--body-background-light});
+
+  //navbar-background
+  --navbar-background-light: #{$color-bg};
+  --navbar-background-dark: #{$color-gray_7};
+  --navbar-background-default: var(#{--navbar-background-light});
+
+  //component-background
+  --component-background-dark: #{$color-gray_11};
+  --component-background-light: #{$color-white};
+  --component-background-default: var(#{--component-background-light});
+
+  //component-shadow
+  --component-shadow-light: #{$color-gray-shadow};
+  --component-shadow-dark: #{$color-shadow};
+  --component-shadow-default: var(#{--component-shadow-light});
+
+  //text
+  --text-color-light: #{$color-gray_8};
+  --text-color-dark: #{$color-gray_5};
+  --text-color-default: var(#{--text-color-light});
+}
