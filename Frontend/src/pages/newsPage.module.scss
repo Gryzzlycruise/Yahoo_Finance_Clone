@@ -1,0 +1,23 @@
+@import "./src/styles/variables";
+
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+  height: 88vh;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 23px;
+  line-height: 27px;
+  letter-spacing: -0.5px;
+  color: var(#{--news-text_main-color-default});
+  text-shadow: none;
+  margin: 10px 0;
+}
+
+.list {
+  height: 93%;
+  overflow-y: scroll;
+}

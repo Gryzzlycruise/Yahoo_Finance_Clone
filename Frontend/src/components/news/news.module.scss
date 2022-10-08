@@ -1,0 +1,131 @@
+@import "./src/styles/variables";
+
+.wrapper {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 98rem;
+  padding: 1rem;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background: var(#{--news-background-default});
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.09);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: var(#{--news-text_main-color-default});
+  margin: 1.5rem 0 2rem;
+  text-shadow: none;
+}
+
+.image {
+  min-width: 25rem;
+  max-width: 25rem;
+  height: 20rem;
+  border-radius: 8px;
+  border: 1px solid var(#{--news-border-default});
+  object-fit: cover;
+}
+
+.description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(#{--news-text_secondary-color-default});
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+.link, .date {
+  display: flex;
+  margin-top: 0.5rem ;
+  text-shadow: none;
+}
+
+.link {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(#{--news-border-default});
+  background: var(#{--button-background-default});
+}
+.link > a {
+  color: $color-white;
+  text-decoration: none;
+}
+
+.additional {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1068px) {
+  .item {
+    max-width: 80rem;
+  }
+
+  .image {
+    min-width: 20rem;
+    max-width: 20rem;
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .item {
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info {
+    height: 50%;
+  }
+
+  .title {
+    margin: 1rem 0;
+  }
+
+  .image {
+    min-width: 100%;
+    max-width: 100%;
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .link, .date {
+    font-size: 14px;
+  }
+
+  .link {
+    padding: 0.5rem;
+  }
+
+}

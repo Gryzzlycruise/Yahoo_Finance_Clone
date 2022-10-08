@@ -15,7 +15,7 @@ import {AccountPage} from "./pages/account";
 import {ErrorPage} from "./pages/error";
 import {HomePage} from "./pages/home";
 import {MarketsPage} from "./pages/markets";
-import {NewsPage} from "./pages/news";
+import {NewsPage} from "./pages/newsPage";
 import {SearchPage} from "./pages/search";
 
 import { IRootState, useAppDispatch } from "./store";

@@ -56,4 +56,29 @@ $color-red: #D83337;
   --text-color-light: #{$color-gray_8};
   --text-color-dark: #{$color-gray_5};
   --text-color-default: var(#{--text-color-light});
+
+  //news-text_main
+  --news-text_main-color-light: #{$color-gray_9};
+  --news-text_main-color-dark: #{$color-gray_1};
+  --news-text_main-color-default: var(#{--news-text_main-color-light});
+
+  //news-text_secondary
+  --news-text_secondary-color-light: #{$color-gray_7};
+  --news-text_secondary-color-dark: #{$color-gray_5};
+  --news-text_secondary-color-default: var(#{--news-text_secondary-color-light});
+
+  //news-border
+  --news-border-light: #{$color-gray_3};
+  --news-border-dark: #{$color-gray_8};
+  --news-border-default: var(#{--news-border-light});
+
+  //news-background
+  --news-background-light: #{$color-white};
+  --news-background-dark: #{$color-gray_10};
+  --news-background-default: var(#{--news-background-light});
+
+  //button-background
+  --button-background-light: #{$color-deep_lilac};
+  --button-background-dark: #{$color-cornflower};
+  --button-background-default: var(#{--button-background-light});
 }

@@ -7,7 +7,12 @@ export function changeRootCssVariables (theme: Theme) {
         'navbar-background',
         'component-background',
         'component-shadow',
-        'text-color'
+        'text-color',
+        'news-text_main-color',
+        'news-border',
+        'news-text_secondary-color',
+        'news-background',
+        'button-background'
     ];
 
     components.forEach(component => {
