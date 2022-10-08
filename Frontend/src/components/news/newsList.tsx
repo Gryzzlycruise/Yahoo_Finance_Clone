@@ -9,7 +9,7 @@ export const NewsList = () => {
 
     useEffect(() => {
         const getArticles = async () => {
-            const response = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=b5f970c697094202927aa40adb3dcdad');
+            const response = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&language=en&apiKey=b5f970c697094202927aa40adb3dcdad');
             setArticles(response.data.articles);
         }
 
