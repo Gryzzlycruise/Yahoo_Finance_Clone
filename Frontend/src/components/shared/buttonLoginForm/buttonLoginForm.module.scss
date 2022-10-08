@@ -44,7 +44,10 @@ button {
     display: block;
     width: 100%;
     color: $color-red;
-
+    animation: shake 10s ease-in infinite alternate;
+    &:hover {
+      animation-play-state: paused;
+    }
     svg {
       fill: $color-red;;
     }
@@ -58,5 +61,29 @@ button {
     svg {
       fill: $color-green;;
     }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  2%,
+  4%,
+  6%,
+  8% {
+    transform: translate(0.8em);
+  }
+  1%,
+  2%,
+  5% {
+    transform: translate(-.2em);
+  }
+  7%,
+  10% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(0);
   }
 }
