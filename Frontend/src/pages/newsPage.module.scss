@@ -20,4 +20,49 @@
 .list {
   height: 93%;
   overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.button {
+  background-color: var(#{--news-background-light});
+  position: fixed;
+  bottom: 20px;
+  right: 10vw;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  transform: translate(-50%);
+  opacity: 0;
+}
+
+.button > svg {
+  color: var(#{--news-text_main-color-default});
+  height: 50px;
+  width: 50px;
+}
+
+.showButton {
+  opacity: 1;
+  transition: 1s;
+}
+
+@media screen and (max-width: 980px) {
+  .button {
+    bottom: 30px;
+    right: 8vw;
+    height: 40px;
+    width: 40px;
+  }
+  .button > svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .button {
+    bottom: 100px;
+  }
 }

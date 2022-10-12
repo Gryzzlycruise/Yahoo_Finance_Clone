@@ -1,10 +1,14 @@
 import {NewsList} from "../components/news/newsList";
 
+import {GlobalSvgSelector} from "../assets/icons/global/GlobalSvgSelector";
 import styles from "./newsPage.module.scss"
 import {useEffect, useState} from "react";
 
 export const NewsPage = () => {
     const [fetching, setFetching] = useState(true);
+    const [showButton, setShowButton] = useState(`${styles.button}`);
+
+    const newsList = document.getElementById('newsList') as HTMLElement;
 
     useEffect(() => {
         const newsList = document.getElementById('newsList') as HTMLElement;
@@ -19,6 +23,16 @@ export const NewsPage = () => {
         if (event.target.scrollHeight - (event.target.scrollTop + window.innerHeight) < 100) {
             setFetching(true);
         }
+
+        if (event.target.scrollTop > 700) {
+            setShowButton(`${styles.button} ${styles.showButton}`);
+        } else if (event.target.scrollTop < 700) {
+            setShowButton(`${styles.button}`);
+        }
+    }
+
+    const scrollTop = () => {
+        newsList.scrollTo(0,0);
     }
 
     return (
@@ -29,6 +43,9 @@ export const NewsPage = () => {
                           setFetching={setFetching}
                 />
             </div>
+            <button className={showButton} id={'scroll_top'} onClick={scrollTop}>
+                <GlobalSvgSelector id={'scroll_top'}/>
+            </button>
         </div>
     );
 }
