@@ -1,4 +1,5 @@
 import {NewsList} from "../components/news/newsList";
+import {Comment} from "react-loader-spinner";
 
 import {GlobalSvgSelector} from "../assets/icons/global/GlobalSvgSelector";
 import styles from "./newsPage.module.scss"
@@ -42,6 +43,18 @@ export const NewsPage = () => {
                 <NewsList fetching={fetching}
                           setFetching={setFetching}
                 />
+                <div className={styles.loader}>
+                    <Comment
+                        visible={fetching}
+                        height="80"
+                        width="80"
+                        ariaLabel="comment-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="comment-wrapper"
+                        color="#fff"
+                        backgroundColor="#F4442E"
+                    />
+                </div>
             </div>
             <button className={showButton} id={'scroll_top'} onClick={scrollTop}>
                 <GlobalSvgSelector id={'scroll_top'}/>
