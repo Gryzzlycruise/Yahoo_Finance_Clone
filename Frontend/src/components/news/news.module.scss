@@ -65,7 +65,12 @@
   border-radius: 8px;
   border: 1px solid var(#{--news-border-default});
   background: var(#{--button-background-default});
+  transition: all 0.7s ease-out;
+  &:hover {
+    transform: translate(0%, -20%);
+  }
 }
+
 .link > a {
   color: $color-white;
   text-decoration: none;
