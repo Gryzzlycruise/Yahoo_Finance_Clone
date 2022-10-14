@@ -1,4 +1,5 @@
 import styles from "./news.module.scss";
+import {changePublishTime} from "../../utils/functions"
 
 export interface PropsNewsItem {
     title: string,
@@ -18,7 +19,7 @@ export const NewsItem = ({title, description, url, urlToImage, publishedAt}: Pro
                     <p className={styles.description}>{description}</p>
                     <div className={styles.additional}>
                         <h3 className={styles.link}><a href={url} target={'_blank'}>Read more...</a></h3>
-                        <time dateTime={publishedAt} className={styles.date}>{publishedAt}</time>
+                        <time dateTime={publishedAt} className={styles.date}>{changePublishTime(publishedAt)}</time>
                     </div>
                 </div>
             </div>
