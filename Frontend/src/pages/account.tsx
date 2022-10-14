@@ -33,7 +33,7 @@ export const AccountPage = (props: AccountProps) => {
         <div className={styles.wrapper}>
             <div className={styles.logo}><img src={Image} alt={'File not found'}></img>
             </div>
-            <h1>Вы успeшно авторизовались, {profile}</h1>
+            <h1 className={styles.title}>Вы успeшно авторизовались, {profile}</h1>
             <button className={styles.link} onClick={changeTheme}>Change theme</button>
             <button className={styles.link} onClick={() => dispatch(getProfile())}>Update profile</button>
             <NavLink  to={'/'} className={styles.link} onClick={() => logout()}>Log out</NavLink>

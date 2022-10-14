@@ -2,9 +2,13 @@
 
 .wrapper {
   padding: 15px;
-  width: 26vw;
+  width: 100vw;
   margin: 0 auto;
   height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -23,13 +27,14 @@
 .logo img {
   position: absolute;
   z-index: 1;
-  width: 25vw;
-  height: 25vw;
+  width: inherit;
+  height: inherit;
 }
 
-.wrapper h1 {
+.title {
   margin: 10px 0 0;
   color: var(#{text-color-default});
+  text-align: center;
 }
 
 .link {
@@ -57,5 +62,15 @@
     color: $color-deep_lilac;
     border: 2px solid $color-deep_lilac;
     transform: translate(0%, -20%);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .link {
+    width: 50vw;
+  }
+  .logo {
+    width: 50vw;
+    height: 50vw;
   }
 }
