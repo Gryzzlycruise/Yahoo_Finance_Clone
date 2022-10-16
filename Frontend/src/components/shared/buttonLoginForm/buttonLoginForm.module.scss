@@ -1,6 +1,6 @@
 @import "./src/styles/variables";
 
-button {
+.wrapper > button {
   font-family: 'Roboto', sans-serif;
   border: 0;
   outline: 0;
@@ -16,6 +16,9 @@ button {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     box-shadow: -2px -2px 5px $color-white,
@@ -41,20 +44,20 @@ button {
   }
 
   &.red {
-    display: block;
     width: 100%;
     color: $color-red;
     animation: shake 10s ease-in infinite alternate;
+
     &:hover {
       animation-play-state: paused;
     }
+
     svg {
       fill: $color-red;;
     }
   }
 
   &.green {
-    display: block;
     width: 100%;
     color: $color-green;
 

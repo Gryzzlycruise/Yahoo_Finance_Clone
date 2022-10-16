@@ -1,7 +1,7 @@
-import {NewsList} from "../components/news/newsList";
+import {NewsList} from "../../components/news/newsList";
 import {Comment} from "react-loader-spinner";
 
-import {GlobalSvgSelector} from "../assets/icons/global/GlobalSvgSelector";
+import {GlobalSvgSelector} from "../../assets/icons/global/GlobalSvgSelector";
 import styles from "./newsPage.module.scss"
 import {useEffect, useState} from "react";
 
@@ -39,7 +39,7 @@ export const NewsPage = () => {
     return (
         <div className={styles.wrapper}>
             <h1 className={styles.heading}>Latest news</h1>
-            <div className={styles.list} id={'newsList'}>
+            <div className={`${styles.list} custom-scrollbar`} id={'newsList'}>
                 <NewsList fetching={fetching}
                           setFetching={setFetching}
                 />

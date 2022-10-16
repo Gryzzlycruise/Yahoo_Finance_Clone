@@ -1,13 +1,13 @@
-import Image from '../assets/images/1.jpeg';
+import Image from '../../assets/images/1.jpeg';
 
-import styles from './account.module.scss';
-import {IRootState, useAppDispatch} from "../store";
-import {getProfile, logoutUser} from "../store/auth/actionCreators";
+import styles from './accountPage.module.scss';
+import {IRootState, useAppDispatch} from "../../store";
+import {getProfile, logoutUser} from "../../store/auth/actionCreators";
 import {useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
-import {PopUpProps} from "../components/popUp/popUp";
-import {useTheme} from "../hooks/useTheme";
-import {Theme} from "../context/ThemeContext";
+import {PopUpProps} from "../../components/popUp/popUp";
+import {useTheme} from "../../hooks/useTheme";
+import {Theme} from "../../context/ThemeContext";
 
 type AccountProps = Pick<PopUpProps, "setLogin" | "setPassword">;
 

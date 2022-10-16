@@ -11,12 +11,12 @@ import {BackgroundVideo} from "./components/backgroundVideo/backgroundVideo";
 import {PopUp} from "./components/popUp/popUp";
 import {NavBar} from "./components/navBar/navBar";
 
-import {AccountPage} from "./pages/account";
+import {AccountPage} from "./pages/accountPage/accountPage";
 import {ErrorPage} from "./pages/error";
 import {HomePage} from "./pages/home";
-import {MarketsPage} from "./pages/markets";
-import {NewsPage} from "./pages/newsPage";
-import {SearchPage} from "./pages/search";
+import {MarketsPage} from "./pages/marketsPage";
+import {NewsPage} from "./pages/newsPage/newsPage";
+import {SearchPage} from "./pages/searchPage/searchPage";
 
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";

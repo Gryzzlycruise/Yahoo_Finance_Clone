@@ -69,10 +69,14 @@ export const Login = ({login, setLogin, password, setPassword, setActive}: Login
 
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form}
+          onSubmit={handleSubmit}
+      >
         <h2 className={styles.title}>Sign up</h2>
         <div>
-          <label htmlFor="login">
+          <label htmlFor="login"
+                 className={styles.label}
+          >
             {loginDirty && loginError ? <ErrorMessage error={loginError}/>: null}
           </label>
           <input
@@ -80,13 +84,15 @@ export const Login = ({login, setLogin, password, setPassword, setActive}: Login
             type="text"
             placeholder={"Login"}
             value={login}
-            className={loginDirty && loginError ? styles.red : ""}
+            className={ loginDirty && loginError ? `${styles.red} ${styles.input}` : styles.input}
             onChange={onChangeLogin}
             onBlur={handleBlur}
           />
         </div>
         <div>
-          <label htmlFor="password">
+          <label htmlFor="password"
+                 className={styles.label}
+          >
             {passwordDirty && passwordError ? <ErrorMessage error={passwordError}/>: null}
           </label>
           <input
@@ -94,7 +100,7 @@ export const Login = ({login, setLogin, password, setPassword, setActive}: Login
             type="password"
             placeholder={"Password"}
             value={password}
-            className={passwordDirty && passwordError ? styles.red : ""}
+            className={passwordDirty && passwordError ? `${styles.red} ${styles.input}` : styles.input}
             onChange={onChangePassword}
             onBlur={handleBlur}
           />

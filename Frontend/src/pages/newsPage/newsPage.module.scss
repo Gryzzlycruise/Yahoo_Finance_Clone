@@ -1,4 +1,4 @@
-@import "./src/styles/variables";
+@import "../../styles/variables";
 
 .wrapper {
   width: 80vw;
@@ -14,7 +14,7 @@
   letter-spacing: -0.5px;
   color: var(#{--news-text_main-color-default});
   text-shadow: none;
-  margin: 10px 0;
+  margin: 10px 0 10px 1%;
 }
 
 .list {
@@ -35,6 +35,21 @@
   width: 50px;
   transform: translate(-50%);
   opacity: 0;
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  text-shadow: 1px 1px 0 $color-white;
+  color: $color-gray;
+  box-shadow: -5px -5px 20px $color-white,
+  5px 5px 20px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white,
+    2px 2px 5px $color-shadow;
+  }
 }
 
 .button > svg {

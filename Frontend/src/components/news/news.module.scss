@@ -1,9 +1,10 @@
 @import "./src/styles/variables";
 
 .wrapper {
-  width: 80vw;
+  width: 99%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .item {
@@ -52,6 +53,10 @@
   color: var(#{--news-text_secondary-color-default});
   text-shadow: none;
   margin-bottom: 0.5rem;
+}
+
+.date {
+  color: var(#{--news-text_main-color-default});
 }
 
 .link, .date {

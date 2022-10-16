@@ -6,3 +6,7 @@ export const changePublishTime = (publishAt: string): string => {
                       .join(' ')
                       .trim();
 }
+
+export const reverseIpoDate = (IpoDate: string): string => {
+    return IpoDate.split('-').reverse().join('.');
+}

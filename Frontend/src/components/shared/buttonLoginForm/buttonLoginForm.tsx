@@ -12,14 +12,16 @@ type ButtonLoginFormProps ={
 
 export const ButtonLoginForm = (props: ButtonLoginFormProps) => {
     return (
-        <button
-            className={styles[props.className]}
-            disabled={props.disabled}
-            title={props.title}
-            onClick={() => props.setActive ? props.setActive(false) : null}
-        >
-            {props.icon ? <GlobalSvgSelector id={props.icon}/>: null}
-            {props.text}
-        </button>
+        <div className={styles.wrapper}>
+            <button
+                className={styles[props.className]}
+                disabled={props.disabled}
+                title={props.title}
+                onClick={() => props.setActive ? props.setActive(false) : null}
+            >
+                {props.icon ? <GlobalSvgSelector id={props.icon}/>: null}
+                <span>{props.text}</span>
+            </button>
+        </div>
     )
 }
